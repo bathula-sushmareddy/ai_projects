@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Website</title>
+    <title>Fitness Gym</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* Basic reset and styles */
         * {
@@ -13,69 +14,220 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
         }
 
         header {
-            background: #333;
+            background-color: #2C3E50; /* Dark Blue */
             color: white;
-            padding: 10px 0;
             text-align: center;
+            padding: 100px 0;
         }
 
         header h1 {
-            font-size: 36px;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 24px;
+            font-weight: 300;
         }
 
         nav {
+            background-color: #1ABC9C; /* Light Green */
+            padding: 15px 0;
             text-align: center;
-            background: #444;
         }
 
         nav a {
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
             display: inline-block;
             text-decoration: none;
             text-transform: uppercase;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            margin: 0 10px;
         }
 
         nav a:hover {
-            background: #555;
+            background: #f54f0e; /* Darker Green */
         }
 
         .container {
-            width: 80%;
+            width: 85%;
             margin: 20px auto;
         }
 
         section {
-            padding: 20px 0;
-            margin-bottom: 20px;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            background-color: #BDC3C7; /* Light Gray */
+            border-radius: 8px;
         }
 
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: #2C3E50; /* Dark Blue */
+        }
+
+        /* Services Section - Cards */
         .services ul {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .services li {
             width: 30%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .services li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .services li h3 {
+            font-size: 24px;
+            color: #2C3E50; /* Dark Blue */
+            margin-bottom: 15px;
+        }
+
+        .services li p {
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            background: #bc271a; /* Light Green */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #16A085; /* Darker Green */
         }
 
         footer {
             text-align: center;
             padding: 20px 0;
-            background: #333;
+            background: #2C3E50; /* Dark Blue */
             color: white;
+        }
+
+        /* Smooth Scroll for Navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Forms Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #1ABC9C; /* Light Green */
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #16A085; /* Darker Green */
+        }
+
+        /* Reviews Section */
+        .reviews {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .review {
+            width: 30%;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .review h4 {
+            color: #2C3E50; /* Dark Blue */
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .services ul {
+                flex-direction: column;
+            }
+
+            .services li {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            nav a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            .reviews {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .review {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -89,14 +241,17 @@
     <nav>
         <a href="#about">About Us</a>
         <a href="#services">Services</a>
+        <a href="#feedback">Feedback</a>
         <a href="#contact">Contact</a>
+        <a href="#reviews">Reviews</a>
     </nav>
 
     <div class="container">
         <!-- About Section -->
         <section id="about">
             <h2>About Us</h2>
-            <p>We are a dedicated fitness center that focuses on helping you achieve your fitness goals. Whether you're looking to lose weight, build muscle, or increase your overall fitness level, we have something for everyone.</p>
+            <p>We are a dedicated fitness center that focuses on helping you achieve your fitness goals. Whether you're looking to lose weight, build muscle, or increase your overall fitness level, we have something for everyone. Our mission is to provide personalized training in a supportive environment.</p>
+            <a href="#services" class="btn">See Our Services</a>
         </section>
 
         <!-- Services Section -->
@@ -105,25 +260,64 @@
             <ul>
                 <li>
                     <h3>Personal Training</h3>
-                    <p>One-on-one coaching to help you reach your specific goals.</p>
+                    <p>One-on-one coaching to help you reach your specific goals. Work with certified trainers to achieve the best results.</p>
                 </li>
                 <li>
                     <h3>Group Classes</h3>
-                    <p>Join a group class to stay motivated and work out together.</p>
+                    <p>Join a group class to stay motivated and work out together. We offer yoga, HIIT, cycling, and more.</p>
                 </li>
                 <li>
                     <h3>Gym Access</h3>
-                    <p>24/7 access to our fully equipped gym for members.</p>
+                    <p>24/7 access to our fully equipped gym with the latest fitness technology and equipment.</p>
                 </li>
             </ul>
+        </section>
+
+        <!-- Subscription Section -->
+        <section id="subscription">
+            <h2>Subscribe for Updates</h2>
+            <p>Get the latest updates on classes, promotions, and fitness tips directly in your inbox.</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <input type="submit" value="Subscribe">
+            </form>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback">
+            <h2>Give Us Your Feedback</h2>
+            <p>We would love to hear your thoughts on our services.</p>
+            <form>
+                <textarea placeholder="Your feedback" rows="4" required></textarea>
+                <input type="submit" value="Submit Feedback">
+            </form>
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Us</h2>
             <p>Have questions? Reach out to us!</p>
-            <p>Email: info@fitnessgym.com</p>
-            <p>Phone: +1 234 567 890</p>
+            <p>Email: <a href="mailto:info@fitnessgym.com">info@fitnessgym.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <h2>What Our Members Say</h2>
+            <div class="reviews">
+                <div class="review">
+                    <h4>John Doe</h4>
+                    <p>"This gym is amazing! The trainers are incredibly supportive, and the facilities are top-notch!"</p>
+                </div>
+                <div class="review">
+                    <h4>Jane Smith</h4>
+                    <p>"I love the variety of classes offered. It keeps me motivated to work out every day!"</p>
+                </div>
+                <div class="review">
+                    <h4>Mark Johnson</h4>
+                    <p>"Great gym with friendly staff and excellent equipment. Highly recommend!"</p>
+                </div>
+            </div>
         </section>
     </div>
 
